@@ -22,7 +22,7 @@ public class Santos_Carcamo_Daniel_David_Estructura {
         
         //Parte de cifrado ceasar
         
-        /*
+        
         //Recurso de referencia
         String abecedarioUp= "ABCDEFGHIJKLMNÑOPQRSTUVWXYZ";
         String abecedarioLow= "abcdefghijklmnñopqrstuvwxyz";
@@ -68,18 +68,25 @@ public class Santos_Carcamo_Daniel_David_Estructura {
         }//fin for
         System.out.println("Texto Cifrado: "+texto_cifrado);
         
-        */
-        //Codigo enigma
         
-        boolean regresar=false;
-        while(regresar!=true){
+        //Codigo enigma
+       
+ 
+        String mitadpar="";
+        String mitadimpar="";
+        int lengthImpar=0;
+        int lengthPar=0;
+        boolean continuar=false;
+        
+        while(continuar!=true){
           System.out.println("***Menu de Opciones***");
           System.out.println("1.Encriptar texto"+"\n2.Desencriptar texto"+"\n3.Regresar");
           
           int opcion=lea.nextInt();
-          
-          if(opcion==1){
+
+          switch(opcion){
               
+             case 1:
               System.out.println("Ingrese el texto que desea encriptar: ");
               String texto=lea.next();
               
@@ -90,8 +97,7 @@ public class Santos_Carcamo_Daniel_David_Estructura {
              int poseven;
              int posodd;
              
-             String mitadpar="";
-             String mitadimpar="";
+             
              
              //Ciclo para mitad en posiciones pares
               for(poseven=0; poseven<=(textolength-1); poseven+=2){
@@ -99,7 +105,8 @@ public class Santos_Carcamo_Daniel_David_Estructura {
                  if(letra==' '){
                      //No ocurre nada
                  }else{
-                     mitadpar+=letra; 
+                     mitadpar+=letra;
+                     lengthPar++;
                  }
                  
               }
@@ -112,6 +119,7 @@ public class Santos_Carcamo_Daniel_David_Estructura {
                       //No ocurre nada
                   }else{
                      mitadimpar+=letra; 
+                     lengthImpar++;
                   }
                   
               }
@@ -120,11 +128,38 @@ public class Santos_Carcamo_Daniel_David_Estructura {
               String texto_enigma=mitadpar+mitadimpar;
               
               System.out.println("El texto codificado es: "+texto_enigma);
+              break;
               
+           case 2:
+              System.out.println("Se ha ingresado el proceso para desencriptar");
+              int j;
+              //LengthMayor evalua cual grupo tiene la mayor cantidad de caracteres
+              int lengthMayor=0;
+              if(lengthPar>lengthImpar){
+                  lengthMayor=lengthPar;
+              }else{
+                  lengthMayor=lengthImpar;
+              }
+        
+             
+              String mensajedecoded=" ";
+               
+              for(j=0; j<lengthImpar; j++){
+                  
+                  char letrapar= mitadpar.charAt(j);
+                  mensajedecoded+=letrapar;
+                  char letraimpar=mitadimpar.charAt(j);
+                  mensajedecoded+=letraimpar;
+                  
+              }
+              System.out.println("Palabra decodificada: " +mensajedecoded);
               
-          }else if(opcion==2){
+              break;
               
-          }else if(opcion==3){
+           case 3:
+               System.out.println("Sale de la parte encriptar");
+               continuar=true;
+              break;
               
           }
           
@@ -135,5 +170,6 @@ public class Santos_Carcamo_Daniel_David_Estructura {
         
         
     }
-    
 }
+    
+
