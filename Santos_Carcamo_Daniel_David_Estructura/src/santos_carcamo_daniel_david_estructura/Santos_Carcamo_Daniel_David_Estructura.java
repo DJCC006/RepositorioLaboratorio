@@ -69,6 +69,25 @@ public class Santos_Carcamo_Daniel_David_Estructura {
         System.out.println("Texto Cifrado: "+texto_cifrado);
         
         
+        //Codigo enigma
+        
+        boolean regresar=false;
+        while(regresar!=true){
+          System.out.println("***Menu de Opciones***");
+          System.out.println("1.Encriptar texto"+"\n2.Desencriptar texto"+"\n3.Regresar");
+          
+          int opcion=lea.nextInt();
+          
+          if(opcion==1){
+              
+          }else if(opcion==2){
+              
+          }else if(opcion==3){
+              
+          }
+          
+          
+        }
         
         
         
