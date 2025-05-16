@@ -22,7 +22,7 @@ public class Santos_Carcamo_Daniel_David_Estructura {
         
         //Parte de cifrado ceasar
         
-        
+        /*
         //Recurso de referencia
         String abecedarioUp= "ABCDEFGHIJKLMNÑOPQRSTUVWXYZ";
         String abecedarioLow= "abcdefghijklmnñopqrstuvwxyz";
@@ -68,7 +68,7 @@ public class Santos_Carcamo_Daniel_David_Estructura {
         }//fin for
         System.out.println("Texto Cifrado: "+texto_cifrado);
         
-        
+        */
         //Codigo enigma
         
         boolean regresar=false;
@@ -79,6 +79,48 @@ public class Santos_Carcamo_Daniel_David_Estructura {
           int opcion=lea.nextInt();
           
           if(opcion==1){
+              
+              System.out.println("Ingrese el texto que desea encriptar: ");
+              String texto=lea.next();
+              
+              int textolength=texto.length();
+              
+          
+             //Contadores de posiciones
+             int poseven;
+             int posodd;
+             
+             String mitadpar="";
+             String mitadimpar="";
+             
+             //Ciclo para mitad en posiciones pares
+              for(poseven=0; poseven<=(textolength-1); poseven+=2){
+                 char letra= texto.charAt(poseven);
+                 if(letra==' '){
+                     //No ocurre nada
+                 }else{
+                     mitadpar+=letra; 
+                 }
+                 
+              }
+             
+              System.out.println(mitadpar);
+              //Ciclo para mitad en posiciones impares
+              for(posodd=1; posodd<=(textolength-1); posodd+=2){
+                  char letra= texto.charAt(posodd);
+                  if(letra==' '){
+                      //No ocurre nada
+                  }else{
+                     mitadimpar+=letra; 
+                  }
+                  
+              }
+              System.out.println(mitadimpar);
+              
+              String texto_enigma=mitadpar+mitadimpar;
+              
+              System.out.println("El texto codificado es: "+texto_enigma);
+              
               
           }else if(opcion==2){
               
