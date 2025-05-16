@@ -212,13 +212,18 @@ public class Santos_Carcamo_Daniel_David_Estructura {
                           String mensajedecoded=" ";
 
                           
-                          //LengthImpar se usa como base ya que suele almacenar la mayor cantidad
-                          for(j=0; j<lengthImpar; j++){
-
-                              char letrapar= mitadpar.charAt(j);
-                              mensajedecoded+=letrapar;
-                              char letraimpar=mitadimpar.charAt(j);
-                              mensajedecoded+=letraimpar;
+                          //Saca longitud maxima para poder evaluar la distancia de la palabra a reconstruir
+                          int longitudmaxima= Math.max(mitadpar.length(), mitadimpar.length());
+                          
+                          for(j=0; j<longitudmaxima; j++){
+                              
+                              if(j<mitadpar.length()){
+                                  mensajedecoded+=mitadpar.charAt(j);
+                              }
+                              
+                              if(j<mitadimpar.length()){
+                                  mensajedecoded+=mitadimpar.charAt(j);
+                              }
 
                           }
                           System.out.println("Palabra decodificada: " +mensajedecoded);
