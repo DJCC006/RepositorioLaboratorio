@@ -7,7 +7,7 @@ package santos_carcamo_daniel_david_estructura;
  import java.util.Scanner;
 /**
  *
- * @author David
+ * @author David Carcamo y Daniel Santos
  */
 public class Santos_Carcamo_Daniel_David_Estructura {
    
@@ -17,8 +17,11 @@ public class Santos_Carcamo_Daniel_David_Estructura {
     public static void main(String[] args) {
         // TODO code application logic here
         
-         int Opcion;
+        //Inicializador opcion
+        int Opcion;
         
+        
+        //Inicializador de scanner
         Scanner lea= new Scanner(System.in);
         lea.useDelimiter("\n");
         
@@ -40,13 +43,13 @@ public class Santos_Carcamo_Daniel_David_Estructura {
                 case 1:
                     //Parte de Cifrado Cesar
                     
-                       //Parte de cifrado ceasar
         
         
-                    //Recurso de referencia
+                    //Recursos de referencia
                     String abecedarioUp= "ABCDEFGHIJKLMNÑOPQRSTUVWXYZ";
                     String abecedarioLow= "abcdefghijklmnñopqrstuvwxyz";
         
+                    //String que almacena el texto cifrado
                     String texto_cifrado=" ";
         
        
@@ -140,6 +143,8 @@ public class Santos_Carcamo_Daniel_David_Estructura {
                 case 3:
                     
                      //Seccion codigo enigma
+                    
+                    //Inicializador de variables y contadores
                     String mitadpar="";
                     String mitadimpar="";
                     int lengthImpar=0;
@@ -155,7 +160,7 @@ public class Santos_Carcamo_Daniel_David_Estructura {
                       switch(opcion){
 
                          case 1:
-                             //Ingreso de la parte de encriptar
+                           //Ingreso de la parte de encriptar
                           System.out.println("Ingrese el texto que desea encriptar: ");
                           String texto=lea.next();
 
@@ -193,7 +198,7 @@ public class Santos_Carcamo_Daniel_David_Estructura {
 
                           }
                           
-
+                          //Creacion del texto codificado
                           String texto_enigma=mitadpar+mitadimpar;
 
                           System.out.println("El texto codificado es: "+texto_enigma);
@@ -202,17 +207,12 @@ public class Santos_Carcamo_Daniel_David_Estructura {
                        case 2:
                            //Seccion que se ocupa de desencriptar el mensaje anterior
                           int j;
-                          //LengthMayor evalua cual grupo tiene la mayor cantidad de caracteres
-                          int lengthMayor=0;
-                          if(lengthPar>lengthImpar){
-                              lengthMayor=lengthPar;
-                          }else{
-                              lengthMayor=lengthImpar;
-                          }
-
-
+                        
+                          //String de mensaje decodificado
                           String mensajedecoded=" ";
 
+                          
+                          //LengthImpar se usa como base ya que suele almacenar la mayor cantidad
                           for(j=0; j<lengthImpar; j++){
 
                               char letrapar= mitadpar.charAt(j);
@@ -246,30 +246,16 @@ public class Santos_Carcamo_Daniel_David_Estructura {
                     break;
                     
                 default:
+                    //Verificador de ingreso de opcion
                     System.out.println("Esa opcion no es valida, por favor ingrese una opcion que sea valida.");
                     break;
             }
                 
         } while (Opcion != 3);
         
+ 
         
-        
-        
-        
-        
-        
-        
-        
-        
-     
-        
-        
-       
-        
-        
-        
-        
-    }
+    }//Fin main
 }
     
 
