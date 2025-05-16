@@ -24,14 +24,16 @@ public class Santos_Carcamo_Daniel_David_Estructura {
         
         
         //Recurso de referencia
-        String abecedario= "ABCDFGHIJKLMNÑOPQRSTUVWXYZ";
+        String abecedarioUp= "ABCDEFGHIJKLMNÑOPQRSTUVWXYZ";
+        String abecedarioLow= "abcdefghijklmnñopqrstuvwxyz";
+        
         String texto_cifrado=" ";
         
        
         //Ingreso de frase inicial
         System.out.println("Ingrese una frase: ");
-        String frase=lea.next().toUpperCase();
-        System.out.println(frase);
+        String frase=lea.next();
+       
         
         //Ingreso de indice de salto
         System.out.println("Ingrese el indice de salto: ");
@@ -44,14 +46,22 @@ public class Santos_Carcamo_Daniel_David_Estructura {
         for(i=0; i<=(fraselength-1); i++){
             char letra=frase.charAt(i);
             
+            //Letra en mayuscula para poder comparar con abecedario de referencia
+            char letraUP= Character.toUpperCase(letra);
+         
             //Variable que referencia la posicion en el abecedario
-            int pos= abecedario.indexOf(letra);
+            int pos= abecedarioUp.indexOf(letraUP);
             
             //pos==-1 en caso que no coincida con ninguna de las letras del abecedario
             if(pos==-1){
                 texto_cifrado+=letra;
             }else{
-                texto_cifrado+=abecedario.charAt((pos+indexSalto)%fraselength);
+                if(letra==letraUP){
+                    texto_cifrado+=abecedarioUp.charAt((pos+indexSalto));
+                }else{
+                    texto_cifrado+=abecedarioLow.charAt((pos+indexSalto));
+                }
+                
             }
             
         }//fin for
