@@ -95,7 +95,5 @@ public class Santos_Carcamo_Daniel_David_Estructura {
             }
                 
         } while (Opcion >= 3);
-    
     }
-    
 }
