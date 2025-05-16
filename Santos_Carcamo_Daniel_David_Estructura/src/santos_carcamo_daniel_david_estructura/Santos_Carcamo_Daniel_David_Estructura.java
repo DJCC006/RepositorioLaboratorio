@@ -32,6 +32,13 @@ public class Santos_Carcamo_Daniel_David_Estructura {
         String frase=lea.next().toUpperCase();
         System.out.println(frase);
         
+        int fraselength=frase.length();
+        
+        int i;
+        for(i=0; i<=(fraselength-1); i++){
+            
+        }
+        
         
         
         
