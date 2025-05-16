@@ -56,10 +56,11 @@ public class Santos_Carcamo_Daniel_David_Estructura {
             if(pos==-1){
                 texto_cifrado+=letra;
             }else{
+                //Pruebas ifs para comprobar si la letra es mayuscula o minuscula
                 if(letra==letraUP){
-                    texto_cifrado+=abecedarioUp.charAt((pos+indexSalto));
+                    texto_cifrado+=abecedarioUp.charAt((pos+indexSalto)%27);
                 }else{
-                    texto_cifrado+=abecedarioLow.charAt((pos+indexSalto));
+                    texto_cifrado+=abecedarioLow.charAt((pos+indexSalto)%27);
                 }
                 
             }
